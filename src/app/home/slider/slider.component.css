@@ -1,0 +1,85 @@
+/* CAROUSEL */
+.myCarousel .carousel_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,0.7));
+}
+.myCarousel .carousel_caption {
+    position: absolute;
+    top: 37%;
+    left: 8%;
+    width: 50%;
+    z-index: 2;
+}
+.myCarousel .carousel_caption p:first-child, 
+.movie_showtime p:first-child,
+.coming_item p:first-child {
+    color: #ec7532;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.myCarousel .carousel_caption h1 {
+    color: white;
+}
+.myCarousel .carousel_caption p:nth-child(3) {
+    color: white;
+    margin-bottom: 1rem;
+}
+.myCarousel .carousel-indicators li {
+    width: 35px;
+    height: 3px;
+    /* border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%; */
+    background-color: transparent;
+    border: 1px solid #ec7532;
+}
+.myCarousel .carousel-indicators .active {
+    background-color: white;
+}
+.myCarousel .carousel-indicators{
+    justify-content: center;
+    bottom: 55px;
+}
+.carousel-control-next, .carousel-control-prev {
+    width: 10%;
+}
+@media screen and (max-width:768px) {
+    .display-4 {
+        font-size: 1.5rem;
+    }
+    .myCarousel .carousel-indicators li {
+        width: 35px;
+        height: 2px;
+        /* border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%; */
+        background-color: transparent;
+        border: 1px solid #ec7532;
+    }
+    .myCarousel .carousel-indicators{
+        justify-content: center;
+        bottom: 30px;
+    }
+}
+@media screen and (max-width:576px) {
+    .display-4 {
+        font-size: 1.5rem;
+    }
+    .myCarousel .carousel-indicators{
+        justify-content: center;
+        bottom: 25px;
+    }
+    .myCarousel .carousel_caption p:nth-child(3) {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 10px;
+    }
+}

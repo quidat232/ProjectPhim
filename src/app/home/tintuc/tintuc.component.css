@@ -1,0 +1,30 @@
+.showtime .nav-item .nav-link {
+    border: none;
+    background: transparent;
+    color: black;
+    padding-bottom: 15px;
+}
+.showtime .nav-tabs {
+    width: 50%;
+}
+.showtime .nav-item {
+    position: relative;
+}
+.showtime .nav-link::before {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .5s all;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -ms-transition: .5s all;
+    -o-transition: .5s all;
+}
+.showtime .nav-link.active::before,
+.showtime .nav-link:hover::before {
+    width: 100%;
+}
