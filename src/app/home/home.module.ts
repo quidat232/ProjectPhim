@@ -15,7 +15,7 @@ import { LienheComponent } from './lienhe/lienhe.component';
 import { FormlienheComponent } from './formlienhe/formlienhe.component';
 import { ThongTinLienHeComponent } from './thong-tin-lien-he/thong-tin-lien-he.component';
 import { TrangchuComponent } from './trangchu/trangchu.component';
-import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
     FormlienheComponent,
     ThongTinLienHeComponent,
     TrangchuComponent,
-    ItemTinTucComponent
+
   ],
   imports: [
     CommonModule
@@ -55,7 +55,6 @@ import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
     FormlienheComponent,
     ThongTinLienHeComponent,
     TrangchuComponent,
-    ItemTinTucComponent
   ]
 })
 export class HomeModule { }
