@@ -1,3 +1,47 @@
-<p>
-  item-phim works!
-</p>
+<!-- <div class="movie mt-5">
+  <div class="movie_item">
+    <img [src]="itemPhim.HinhAnh" class="img-fluid">
+    <div class="movie_overlay"></div>
+    <div class="movie_release text-center text-white">
+        <i class="fa fa-play movie_play"></i>
+        <button class="btn btn-outline-warning mt-3">Xem Thêm</button>        
+    </div>
+  </div>
+</div>
+ -->
+ <div class="card1 mt-5">
+  <div class="poster">
+      <img [src]="itemPhim.HinhAnh" alt="">
+  </div>
+  <div class="details">
+      <h2>{{itemPhim.TenPhim}}
+          <br>
+          <span>Directed by {{itemPhim.DaoDien}}</span>
+      </h2>
+      <div class="rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+              <span>4/5</span>
+      </div>
+      <div class="tags">
+          <span class="fantasy">Fantasy</span>
+          <span class="romance">Romance</span>
+      </div>
+      <div class="info">
+          <p class="text-info">{{itemPhim.NoiDung}}</p>
+          
+      </div>
+      <div class="star">
+          <h4>Cast</h4>
+          <ul class="star-ul">
+              <li><img src="../../../assets/img/cast1.jpg" alt=""></li>
+              <li><img src="../../../assets/img/cast2.jpg" alt=""></li>
+              <li><img src="../../../assets/img/cast3.jpg" alt=""></li>
+              <li><img src="../../../assets/img/cast4.jpg" alt=""></li>
+          </ul>
+      </div>
+  </div>
+</div>

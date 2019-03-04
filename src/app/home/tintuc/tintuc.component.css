@@ -10,6 +10,12 @@
 .showtime .nav-item {
     position: relative;
 }
+.showtime .nav-item > a{
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 0;
+}
 .showtime .nav-link::before {
     content: '';
     width: 0%;

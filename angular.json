@@ -26,7 +26,9 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
-              "node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
+              "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
+              "src/assets/css/demo.css",
+              "src/assets/css/set1.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

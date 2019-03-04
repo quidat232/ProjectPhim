@@ -1,24 +1,24 @@
 <div class="row showtime">
   <ul class="nav nav-tabs">
     <li class="nav-item ">
-        <a class="nav-link active px-4" data-toggle="tab" href="#">Điện Ảnh </a>
+        <a class="nav-link active px-4" data-toggle="tab" (click)="ChonLoaiTin('DienAnh')">Điện Ảnh </a>
     </li>
     <li class="nav-item ">
-        <a class="nav-link px-4 " data-toggle="tab" href="#">Review</a>
+        <a class="nav-link px-4 " data-toggle="tab" (click)="ChonLoaiTin('ReView')">Review</a>
     </li>
     <li class="nav-item ">
-      <a class="nav-link px-4 " data-toggle="tab" href="#">Khuyến Mãi</a>
+      <a class="nav-link px-4 " data-toggle="tab" (click)="ChonLoaiTin('KhuyenMai')">Khuyến Mãi</a>
   </li>
 </ul>
 </div>
-<div class="row">
-  <div class="col-12">
+<div class="row" [ngSwitch]="LoaiTinTuc">
+  <div *ngSwitchCase="'DienAnh'" class="col-12">
     <app-dien-anh></app-dien-anh>
   </div>
-  <div class="col-12">
+  <div *ngSwitchCase="'ReView'" class="col-12">
     <app-re-view></app-re-view>
   </div>
-  <div class="col-12">
+  <div *ngSwitchCase="'KhuyenMai'"class="col-12">
     <app-khuyen-mai></app-khuyen-mai>
   </div>
 </div>

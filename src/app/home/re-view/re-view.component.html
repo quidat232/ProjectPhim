@@ -1,11 +1,5 @@
 <div class="row">
-  <div class="col-md-4">
-    
-  </div>
-  <div class="col-md-4">
-    
-  </div>
-  <div class="col-md-4">
-    
+  <div class="col-md-4" *ngFor="let sukientt of DanhSachReview">
+    <app-item-tin-tuc [TinTuc]="sukientt"></app-item-tin-tuc>
   </div>
 </div>

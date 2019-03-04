@@ -1,11 +1,6 @@
 <div class="row">
-  <div class="col-md-4">
-    
+  <div class="col-md-4" *ngFor="let tintuc of DanhSachDienAnh">
+    <app-item-tin-tuc [TinTuc]="tintuc"></app-item-tin-tuc>
   </div>
-  <div class="col-md-4">
-    
-  </div>
-  <div class="col-md-4">
-    
-  </div>
+  
 </div>

@@ -1,20 +1,6 @@
 <div class="owl-carousel owl-theme">
-  <div class="item">
-    <app-item-phim></app-item-phim>
+  <div class="item" *ngFor="let phimsc of DanhSachPhimSapChieu">
+    <app-item-phim [itemPhim]="phimsc"></app-item-phim>
   </div>
-  <div class="item">
-    <app-item-phim></app-item-phim>
-  </div>
-  <div class="item">
-    <app-item-phim></app-item-phim>
-  </div>
-  <div class="item">
-    <app-item-phim></app-item-phim>
-  </div>
-  <div class="item">
-    <app-item-phim></app-item-phim>
-  </div>
-  <div class="item">
-    <app-item-phim></app-item-phim>
-  </div>
+  
 </div>

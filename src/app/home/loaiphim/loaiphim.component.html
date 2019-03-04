@@ -1,18 +1,21 @@
-<div class="row showtime">
+<div class="row showtime mt-3">
   <ul class="nav nav-tabs">
     <li class="nav-item ">
-        <a class="nav-link active px-4" data-toggle="tab" href="#">Phim Đang Chiếu </a>
+        <a class="nav-link active px-4" data-toggle="tab" (click)="HienThiPhimDangChieu()">Phim Đang Chiếu </a>
     </li>
     <li class="nav-item ">
-        <a class="nav-link px-4 " data-toggle="tab" href="#">Phim Sắp Chiếu</a>
+        <a class="nav-link px-4 " data-toggle="tab" (click)="HienThiPhimSapChieu()">Phim Sắp Chiếu</a>
     </li>
 </ul>
 </div>
 <div class="row">
-  <div class="col-12">
+  <div class="col-12" *ngIf="dangChieuStatus;else phimSapChieu">
       <app-phim-dang-chieu></app-phim-dang-chieu>
   </div>
-  <div class="col-12">
-    <app-phim-sap-chieu></app-phim-sap-chieu>
-  </div>
+  <ng-template #phimSapChieu>
+    <div class="col-12">
+      <app-phim-sap-chieu></app-phim-sap-chieu>
+    </div>
+  </ng-template>
+ 
 </div>
