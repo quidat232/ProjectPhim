@@ -1,0 +1,25 @@
+.contact_group h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 20px;
+}
+.contact_address {
+    border-bottom: 1px solid #fff;
+     margin-bottom: 10px;
+}
+.contact_address p:nth-child(1){
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    float: left;
+    width: 15%;
+}
+.contact_address p:nth-child(2){
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+}

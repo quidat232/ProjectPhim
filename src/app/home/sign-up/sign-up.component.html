@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 mx-auto formSignUp border">
+      <form #formDangKy = "ngForm" (ngSubmit)="DangKy(formDangKy)">
+        <h4 class="display-4 text-signUp">Đăng Ký</h4>
+        <div class="form-group">
+          <label for="">Tài Khoản</label>
+          <input type="text" required #taikhoan="ngModel" class="form-control" name="TaiKhoan" ngModel>
+          <!-- Thông báo lỗi tk -->
+          <div *ngIf = "taikhoan.errors && (taikhoan.touched || taikhoan.dirty || formDangKy.submitted)">
+            <div *ngIf="taikhoan.errors.required" class="alert alert-danger">
+               * Vui lòng nhập tài khoản
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Mật Khẩu</label>
+          <input type="text" required maxlength="16" minlength="8" #matkhau="ngModel" class="form-control" name="MatKhau" ngModel>
+          <!-- Thông báo lỗi mk -->
+          <div *ngIf="matkhau.errors && (matkhau.touched || matkhau.dirty  || formDangKy.submitted)">
+            <div class="alert alert-danger" *ngIf="matkhau.errors.required">
+              * Vui lòng nhập mật khẩu
+            </div>
+            <div *ngIf="matkhau.errors.minlength" class="alert alert-danger">
+              * Mật khẩu phải có tối thiểu là {{matkhau.errors.minlength.requiredLength}} kí tự.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Họ Tên: </label>
+          <input type="text" [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+          "ẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệếỉịọỏốồổỗộớờởỡợ" +
+          "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"' #hoten="ngModel"  class="form-control" name="HoTen" ngModel>
+          <!-- Thông báo lỗi họ tên -->
+          <div *ngIf="hoten.errors && (hoten.touched || hoten.dirty || formDangKy.submitted)">
+            <div *ngIf="hoten.errors.pattern" class="alert alert-danger">
+              *Họ tên phải là chữ cái
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Email</label>
+          <input type="email" email #email="ngModel" class="form-control" name="Email" ngModel>
+          <!-- Thông báo lỗi Email -->
+          <div *ngIf="email.errors && (email.touched || email.dirty || formDangKy.submitted)">
+            <div *ngIf="email.errors.email" class="alert alert-danger">
+              *Email không đúng định dạng
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Số ĐT</label>
+          <input type="text" class="form-control" name="SDT" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="">Loại Người Dùng: </label>
+          <input type="radio" name="MaLoaiNguoiDung" ngModel value="QuanTri">Admin
+          <input type="radio" name="MaLoaiNguoiDung" ngModel value="KhachHang">Khách hàng
+        </div>
+        <div class="form-group">
+          <button [disabled]="formDangKy.invalid" class="btn btn-success" type="submit">Đăng Ký</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+

@@ -19,16 +19,24 @@
 .primary-nav {
     padding: 25px 0;
 }
+.head-flex {
+    display: flex;
+    justify-content: center;
+}
 .nav-sign {
     padding: 30px 0;
-    float: right;
+    margin: 0 10px;
 }
-.signin{
+.signin, .signup{
     color:#999;
     text-decoration: none;
     font-size: 18px;
     display: flex;
     align-items: center;
+}
+.signin {
+    border-right: 1px solid #999;
+    padding-right: 20px;
 }
 .signin i {
     font-size:30px;

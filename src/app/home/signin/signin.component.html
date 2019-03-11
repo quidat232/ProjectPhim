@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 mx-auto border pd-2 m-5">
+      <form [formGroup]="formDangNhap" (ngSubmit)='DangNhap()'>
+        <h4 class="display-4">Đăng Nhập</h4>
+        <div class="form-group">
+          <label for="">Tài Khoản</label>
+          <input type="text"  class="form-control" ngModel formControlName="TaiKhoan" >
+          <div *ngIf="formDangNhap.get('TaiKhoan').invalid && formDangNhap.get('TaiKhoan').touched">
+            <div *ngIf="formDangNhap.get('TaiKhoan').errors['required']" class="alert alert-danger">
+              Vui lòng nhập tài khoản
+            </div>
+            <div *ngIf="formDangNhap.get('TaiKhoan').errors['pattern']" class="alert alert-danger">
+              Tài khoản không đúng định dạng lưu
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Mật Khẩu</label>
+          <input type="password" maxlength="16" ngModel minlength="8"  class="form-control" formControlName="MatKhau">
+          <div *ngIf="formDangNhap.get('MatKhau').invalid && formDangNhap.get('TaiKhoan').touched">
+            <div *ngIf="formDangNhap.get('MatKhau').errors['required']" class="alert alert-danger">
+              Vui lòng nhập mật khẩu
+            </div>
+            <div *ngIf="formDangNhap.get('MatKhau').errors['minlength']" class="alert alert-danger">
+              Mật khẩu phải nhiều hơn  kí tự
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <button  class="btn btn-success" type="submit">Đăng Nhập</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

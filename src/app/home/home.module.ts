@@ -1,4 +1,6 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -16,7 +18,21 @@ import { FormlienheComponent } from './formlienhe/formlienhe.component';
 import { ThongTinLienHeComponent } from './thong-tin-lien-he/thong-tin-lien-he.component';
 import { TrangchuComponent } from './trangchu/trangchu.component';
 import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
+import { LayoutHomeComponent } from './layout-home/layout-home.component';
+import {RouterModule,Routes} from '@angular/router';
+import { SigninComponent } from './signin/signin.component';
+import { QuantriGheModule } from './quantri-ghe/quantri-ghe.module';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
+
+
+
+const homeRoutes :Routes= [
+  {path:'trang-chu', component:TrangchuComponent},
+  {path:'',component:TrangchuComponent},
+  {path:'dang-nhap', component: SigninComponent},
+  {path:'dang-ky', component: SignUpComponent},
+]
 
 @NgModule({
   declarations: [
@@ -36,28 +52,38 @@ import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
     ThongTinLienHeComponent,
     TrangchuComponent,
     ItemTinTucComponent,
-
+    SigninComponent,
+    LayoutHomeComponent,
+    SignUpComponent,
   ],
   imports: [
-    CommonModule
+    RouterModule.forRoot(homeRoutes),
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    QuantriGheModule ,
   ],
   exports: [
-    HeaderComponent,
-    FooterComponent,
-    SliderComponent,
-    LoaiphimComponent,
-    PhimDangChieuComponent,
-    PhimSapChieuComponent,
-    ItemPhimComponent,
-    TintucComponent,
-    DienAnhComponent,
-    ReViewComponent,
-    KhuyenMaiComponent,
-    LienheComponent,
-    FormlienheComponent,
-    ThongTinLienHeComponent,
-    TrangchuComponent,
-    ItemTinTucComponent
+    // HeaderComponent,
+    // FooterComponent,
+    // SliderComponent,
+    // LoaiphimComponent,
+    // PhimDangChieuComponent,
+    // PhimSapChieuComponent,
+    // ItemPhimComponent,
+    // TintucComponent,
+    // DienAnhComponent,
+    // ReViewComponent,
+    // KhuyenMaiComponent,
+    // LienheComponent,
+    // FormlienheComponent,
+    // ThongTinLienHeComponent,
+    // TrangchuComponent,
+    // ItemTinTucComponent,
+    SigninComponent,
+    LayoutHomeComponent,
+    SignUpComponent,
   ]
 })
 export class HomeModule { }

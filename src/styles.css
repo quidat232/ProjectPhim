@@ -23,3 +23,6 @@ body {
 .owl-next span{
     font-size:70px;
 }
+.clear {
+    clear: both;
+}

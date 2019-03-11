@@ -1,6 +1,43 @@
-.lien-he h2{
+.lien-he {
+    padding: 60px 0;
+    background-image: url("../../../assets/img/contact-background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 10;
+}
+.lien-he h1{
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 400;
     padding: 10px 0;
+    letter-spacing: 3px;
+    color: white;
+}
+.hr_content {
+    width: 20%;
+    margin: left;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    height: 3px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.contact_overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    background: #111111;
+    z-index: 2;
+    opacity: .85;
+}
+.content_ct {
+    position: relative;
+    z-index: 10;
 }

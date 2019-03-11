@@ -1,0 +1,33 @@
+.form-control {
+    border: none;
+    outline: none;
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+input {
+    height: 45px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+     margin: 0;
+}
+.submit {
+    background: #FF9800;
+    border-color: none;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px;
+    height: 50px;
+    margin-top: 20px;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+.submit:hover {
+    background: #111111;
+}
