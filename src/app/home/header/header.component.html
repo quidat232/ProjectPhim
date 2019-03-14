@@ -19,18 +19,29 @@
         </div>
       </div>
       <div class="col-md-3 head-flex">
-        <div class="nav-sign">
-          <a routerLink='dang-nhap' class="signin">
-            <!-- <i class="fa fa-user-circle"></i> -->
-            <span>Đăng nhập</span>
-          </a>
-        </div>
-        <div class="nav-sign">
-          <a routerLink='dang-ky' class="signup">
-            <!-- <i class="fa fa-user-circle"></i> -->
-            <span>Đăng Ký</span>
-          </a>
-        </div>
+        <ng-container *ngIf="isLogin; else Islogin">
+            <div class="nav-sign">
+                <a class="signin">
+                  <i class="fa fa-user-circle"></i>
+                  <span>{{nguoiDungDangNhap.TaiKhoan}}</span>
+                </a>
+              </div>
+            <a class="signup logout" (click)="DangXuat()">Đăng xuất</a>
+        </ng-container>
+        <ng-template #Islogin>
+            <div class="nav-sign">
+                <a routerLink='dang-nhap' class="signin">
+                  <!-- <i class="fa fa-user-circle"></i> -->
+                  <span>Đăng nhập</span>
+                </a>
+              </div>
+              <div class="nav-sign">
+                <a routerLink='dang-ky' class="signup">
+                  <!-- <i class="fa fa-user-circle"></i> -->
+                  <span>Đăng Ký</span>
+                </a>
+              </div>
+        </ng-template>
       </div>
     </div>
   </div>
@@ -49,7 +60,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">MUA VÉ</a>
+                <a class="nav-link" routerLink='lich-chieu'>MUA VÉ</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">

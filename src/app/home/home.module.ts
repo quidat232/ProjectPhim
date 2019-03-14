@@ -21,8 +21,11 @@ import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
 import { LayoutHomeComponent } from './layout-home/layout-home.component';
 import {RouterModule,Routes} from '@angular/router';
 import { SigninComponent } from './signin/signin.component';
-import { QuantriGheModule } from './quantri-ghe/quantri-ghe.module';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { DanhSachgheComponent } from './danh-sachghe/danh-sachghe.component';
+import { GheComponent } from './ghe/ghe.component';
+import { EditDanhsachGheComponent } from './edit-danhsach-ghe/edit-danhsach-ghe.component';
+import { LichchieuComponent } from './lichchieu/lichchieu.component';
 
 
 
@@ -32,6 +35,9 @@ const homeRoutes :Routes= [
   {path:'',component:TrangchuComponent},
   {path:'dang-nhap', component: SigninComponent},
   {path:'dang-ky', component: SignUpComponent},
+  {path:'lich-chieu', component: LichchieuComponent,children:[
+    {path:'dat-ve', component: DanhSachgheComponent}
+  ]}
 ]
 
 @NgModule({
@@ -55,6 +61,10 @@ const homeRoutes :Routes= [
     SigninComponent,
     LayoutHomeComponent,
     SignUpComponent,
+    DanhSachgheComponent,
+    GheComponent,
+    EditDanhsachGheComponent,
+    LichchieuComponent,
   ],
   imports: [
     RouterModule.forRoot(homeRoutes),
@@ -62,7 +72,6 @@ const homeRoutes :Routes= [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    QuantriGheModule ,
   ],
   exports: [
     // HeaderComponent,
@@ -84,6 +93,10 @@ const homeRoutes :Routes= [
     SigninComponent,
     LayoutHomeComponent,
     SignUpComponent,
+    GheComponent,
+    DanhSachgheComponent,
+    EditDanhsachGheComponent,
+    LichchieuComponent
   ]
 })
 export class HomeModule { }

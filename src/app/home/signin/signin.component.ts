@@ -13,11 +13,30 @@ import { AuthService } from 'src/app/guard/auth.service';
 export class SigninComponent implements OnInit {
   @ViewChild('formDN') fromDangNhap: NgForm;
   formDangNhap:FormGroup;
-  DangNhap() {
-    console.log(this.formDangNhap.value);
-  }
-  constructor() { }
+  
+  constructor(private _nguoiDungSV:NguoidungApiService,private _router:Router,private _auth:AuthService  ) { }
 
+  DangNhap() {
+    let nguoiDungDN = this.formDangNhap.value;
+    this._nguoiDungSV.DangNhap(nguoiDungDN.TaiKhoan, nguoiDungDN.MatKhau).subscribe(
+      (kq:any) =>{
+        console.log(kq);
+        if(typeof(kq) == "object") {
+          localStorage.setItem('nguoiDungDangNhap', JSON.stringify(kq));
+          // this._auth.isLogin = true;
+          this._auth.checkLogin();
+          this._router.navigate(['/']);
+          // console.log(this._auth.isLogin);
+          
+        } else {
+          alert('Vui lòng nhập lại tài khoản và mật khẩu');
+        }
+      }, 
+      (error:any) =>{
+        console.log(error);
+      }
+    )
+  }
   ngOnInit() {
     this.formDangNhap = new FormGroup({
       'TaiKhoan': new FormControl(null,[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]),
@@ -25,19 +44,4 @@ export class SigninComponent implements OnInit {
     })
   }
 
-  // DangNhap(nguoiDung) {
-  //   this._nguoiDungApi.DangNhap(nguoiDung).subscribe(
-  //     (res:any) =>{
-  //       if(typeof res !==  "string") {
-  //         localStorage.setItem("Đăng nhập thành công",JSON.stringify(res))
-  //         this._auth.isLogin = true;
-  //         this._Router.navigate(['/']);
-  //       } else {
-  //         alert('Mật khẩu hoặc tài khoản không đúng');
-  //       }
-  //     }, (err:any) => {
-  //       console.log(err);
-  //     }
-  //   )
-  // }
 }

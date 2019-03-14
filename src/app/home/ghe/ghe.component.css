@@ -1,0 +1,18 @@
+
+.ghe {
+    width: 45px;
+    padding: 5px 0;
+    color: white; 
+    cursor: pointer;
+    border-radius: 5px;
+}
+.ghe:focus {
+    box-shadow: none !important;
+}
+.GheDuocDat {
+    cursor: no-drop !important;
+    background-color: rgb(233,136,136);
+}
+.GheDaDat {
+    background-color: rgb(123,219,152);
+}

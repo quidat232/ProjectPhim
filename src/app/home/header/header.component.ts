@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/guard/auth.service';
+import { NguoiDung } from 'src/app/models/nguoidung';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private _auth:AuthService) { }
+  isLogin:boolean = false;
+ nguoiDungDangNhap: NguoiDung;
   ngOnInit() {
-  }
+  this._auth.login.subscribe(
+    (res:any) => {
+      this.isLogin = res;
+      console.log(localStorage.getItem('nguoiDungDangNhap'));
+      if(this.isLogin === true) {
+        this.nguoiDungDangNhap = JSON.parse(localStorage.getItem('nguoiDungDangNhap'));
+      }
+      console.log(this.nguoiDungDangNhap);
+      // console.log(res);
+      // console.log(this.isLogin);
+      // console.log(123)
+    },
+    (err:any) => {
+      console.log(err);
+    }  
+      
+    );
 
+  }
+  DangXuat() {
+    localStorage.removeItem('nguoiDungDangNhap');
+    this._auth.checkLogin();
+  }
 }
