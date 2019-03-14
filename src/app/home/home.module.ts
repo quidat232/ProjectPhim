@@ -31,13 +31,15 @@ import { LichchieuComponent } from './lichchieu/lichchieu.component';
 
 
 const homeRoutes :Routes= [
-  {path:'trang-chu', component:TrangchuComponent},
-  {path:'',component:TrangchuComponent},
-  {path:'dang-nhap', component: SigninComponent},
-  {path:'dang-ky', component: SignUpComponent},
-  {path:'lich-chieu', component: LichchieuComponent,children:[
-    {path:'dat-ve', component: DanhSachgheComponent}
-  ]}
+  {path:'', component:LayoutHomeComponent, children: [
+    {path:'trang-chu', component:TrangchuComponent},
+    {path:'', component:TrangchuComponent},
+    {path:'dang-nhap', component: SigninComponent},
+    {path:'dang-ky', component: SignUpComponent},
+    {path:'lich-chieu', component: LichchieuComponent,children:[
+      {path:'dat-ve', component: DanhSachgheComponent}
+    ]}
+  ]},
 ]
 
 @NgModule({
@@ -88,7 +90,7 @@ const homeRoutes :Routes= [
     // LienheComponent,
     // FormlienheComponent,
     // ThongTinLienHeComponent,
-    // TrangchuComponent,
+    TrangchuComponent,
     // ItemTinTucComponent,
     SigninComponent,
     LayoutHomeComponent,
