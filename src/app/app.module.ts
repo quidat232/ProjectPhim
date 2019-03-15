@@ -6,14 +6,11 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 import {RouterModule, Routes} from '@angular/router'
-import { LayoutHomeComponent } from './home/layout-home/layout-home.component';
-import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
-import { TrangchuComponent } from './home/trangchu/trangchu.component';
 
 const appRoutes:Routes = [
   {path:'', loadChildren:() => HomeModule},
+  {path:'home', loadChildren:() => HomeModule},
   {path:'admin', loadChildren: () => AdminModule}
-
 ]
 
 
