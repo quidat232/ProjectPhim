@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NguoiDung } from 'src/app/models/nguoidung';
+import { NguoidungApiService } from 'src/app/services/nguoidung-api.service';
 
 @Component({
   selector: 'app-quan-ly-nguoi-dung',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quan-ly-nguoi-dung.component.css']
 })
 export class QuanLyNguoiDungComponent implements OnInit {
+  danhSachNguoiDung: NguoiDung[] = []
 
-  constructor() { }
+  constructor(private _nguoidungApi:NguoidungApiService) { }
 
   ngOnInit() {
+    this._nguoidungApi.LayDanhSachNguoiDung().subscribe(
+      (result: any) =>{
+        console.log(result);
+        this.danhSachNguoiDung = result
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    )
   }
 
 }

@@ -5,26 +5,33 @@ import { QuanLyPhimComponent } from './quan-ly-phim/quan-ly-phim.component';
 import { QuanLyLichChieuComponent } from './quan-ly-lich-chieu/quan-ly-lich-chieu.component';
 import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { AdminFooterComponent } from './admin-footer/admin-footer.component'
 
 const adminRoutes :Routes= [
-  {path:'admin', component:LayoutAdminComponent},
-  {path:'ql-nguoi-dung', component: QuanLyNguoiDungComponent},
-  {path:'ql-phim', component: QuanLyPhimComponent},
-  {path:'ql-lich-chieu', component: QuanLyLichChieuComponent}
+  {path:'admin', component:LayoutAdminComponent, children: [
+    {path:'ql-nguoi-dung', component: QuanLyNguoiDungComponent},
+    {path:'ql-phim', component: QuanLyPhimComponent},
+    {path:'ql-lich-chieu', component: QuanLyLichChieuComponent}
+  ] },
+
 ]
 
 @NgModule({
-  declarations: [QuanLyNguoiDungComponent,
+  declarations: [
+    QuanLyNguoiDungComponent,
     QuanLyPhimComponent,
     QuanLyLichChieuComponent,
-    LayoutAdminComponent],
+    LayoutAdminComponent,
+    AdminHeaderComponent,
+    AdminFooterComponent],
   imports: [
-    RouterModule.forRoot(adminRoutes),
+    RouterModule.forChild(adminRoutes),
     CommonModule,
   ],
   exports: [
-    LayoutAdminComponent
+    LayoutAdminComponent,
   ]
 })
 export class AdminModule { }

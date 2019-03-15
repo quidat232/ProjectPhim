@@ -1,3 +1,32 @@
-<p>
-  quan-ly-nguoi-dung works!
-</p>
+<div class="container-fluid">
+  <table class=" table">
+    <thead class="text-center">
+      <tr>
+        <th>Tài khoản</th>
+        <th>Mật khẩu</th>
+        <th>Họ tên</th>
+        <th>Email</th>
+        <th>Số DT</th>
+        <th>Mã người dùng</th>
+        <th>Tác vụ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let nguoidung of danhSachNguoiDung'>
+        <td>{{nguoidung.TaiKhoan}}</td>
+        <td>{{nguoidung.MatKhau}}</td>
+        <td>{{nguoidung.HoTen}}</td>
+        <td>{{nguoidung.Email}}</td>
+        <td>{{nguoidung.SoDT}}</td>
+        <td>{{nguoidung.MaLoaiNguoiDung }}</td>
+        <td>
+          <button class="btn btn-info mr-1" (click)="xoaNguoiDung(nguoidung.TaiKhoan)">Chi tiết</button>
+          <button class="btn btn-success mr-1" (click)="xoaNguoiDung(nguoidung.TaiKhoan)">Sửa</button>
+          <button class="btn btn-danger" (click)="xoaNguoiDung(nguoidung.TaiKhoan)">Xóa</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
