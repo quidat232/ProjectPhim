@@ -5,4 +5,5 @@ export class NguoiDung{
     public Email:string;
     public SoDT:number;
     public MaLoaiNguoiDung:string;
+    public MaNhom:string;
 }
