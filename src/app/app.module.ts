@@ -7,6 +7,8 @@ import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 import {RouterModule, Routes} from '@angular/router'
 
+import { HttpClientModule } from '@angular/common/http';
+
 const appRoutes:Routes = [
   {path:'', loadChildren:() => HomeModule},
   {path:'home', loadChildren:() => HomeModule},
@@ -25,7 +27,8 @@ const appRoutes:Routes = [
     AppRoutingModule,
     HomeModule,
     AdminModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
 
   ],
   providers: [],
