@@ -5,11 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
-import {RouterModule, Routes} from '@angular/router'
+import {RouterModule, Routes} from '@angular/router';
 
 const appRoutes:Routes = [
   {path:'', loadChildren:() => HomeModule},
-  {path:'home', loadChildren:() => HomeModule},
+  {path:'trang-chu', loadChildren:() => HomeModule},
   {path:'admin', loadChildren: () => AdminModule}
 ]
 
