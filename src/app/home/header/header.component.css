@@ -27,8 +27,8 @@
     padding: 30px 0;
     margin: 0 10px;
 }
-.signin, .signup{
-    color:#999;
+.signin, .signup,.loginsetting{
+    color:#999 !important;
     text-decoration: none;
     font-size: 18px;
     display: flex;
@@ -42,6 +42,20 @@
     font-size:30px;
     margin-right:10px;
 }
+.loginsetting i.fa-user-circle {
+    padding-right: 10px;
+}
+/* .dropdown-menu.show {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    will-change: transform;
+    transform: translate3d(30px, -25px ,0px);
+    -webkit-transform: translate3d(30px, -25px ,0px);
+    -moz-transform: translate3d(30px, -25px ,0px);
+    -ms-transform: translate3d(30px, -25px ,0px);
+    -o-transform: translate3d(30px, -25px ,0px);
+} */
 .clear {
     clear: both;
 }

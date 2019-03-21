@@ -1,12 +1,12 @@
-<ng-container *ngIf="!itemghe.TrangThai;else gheDaduocChon ">
-        <button class="ghe btn btn-secondary mr-2 mb-2"
+<ng-container *ngIf="!itemghe.DaDat;else gheDaduocChon ">
+        <span class="ghe btn btn-secondary mr-2 mb-2"
         [ngClass]="{'GheDaDat':status}" 
         (click)="datGhe()">
             {{itemghe.TenGhe}}
-        </button>
+        </span>
 </ng-container>
 <ng-template #gheDaduocChon>
-        <button class="ghe GheDuocDat btn mr-2 mb-2">
+        <span class="ghe GheDuocDat btn mr-2 mb-2">
             {{itemghe.TenGhe}}
-        </button>
+        </span>
 </ng-template>

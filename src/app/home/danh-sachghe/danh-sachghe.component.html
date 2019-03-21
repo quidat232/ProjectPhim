@@ -1,15 +1,25 @@
 <div class="container m-5">
   <div class="row">
-    <div class="col-4 pd-4 m-4 pb-4 border text-center">
+    <div class="col-8 pd-4 pb-4 border text-center">
       <h1 class="m-3 text-center text-dark">ĐẶT GHẾ</h1>
-      <app-ghe *ngFor="let ghe of DanhSachGhe" [itemghe]='ghe' (emitStatus)="DatGheParent($event,ghe)"></app-ghe>
+      <div class="ghe-template">
+          <app-ghe *ngFor="let ghe of arrayGhe" [itemghe]='ghe' (emitStatus)="DatGheParent($event,ghe)"> </app-ghe>
+      </div>
       <hr>
-      <p *ngFor="let dsghe of danhSachGheDangDat">
-        <span>Tên ghế: {{dsghe.TenGhe}}</span>
-        <span>Giá: {{dsghe.Gia}}</span>
-      </p>
-      <p>Số ghế đã đặt:{{soGheDaDat}}</p>
-      <p>Số ghế còn lại:{{soGheConLai}}</p>
+      <div class="dsGheconlai">
+          <p>Số ghế đã đặt:{{soGheDaDat}}</p>
+          <p>Số ghế còn lại:{{soGheConLai}}</p>
+      </div>
     </div>
+    <div class="col-4 pd-4 pb-4 border">
+        <p *ngFor="let dsghe of danhSachGheDangDat">
+            <span class="ghename">Ghế: {{dsghe.TenGhe}}</span>
+            <span class="giave">{{dsghe.GiaVe}} Đ</span>
+        </p>
+     </div>
+  </div>
+  <div class="col-md-12 text-right">
+    <button class="btn btn-success" (click)= "datVePhim()" >Đặt ghế</button>
   </div>
 </div>
+<div class="clear"></div>

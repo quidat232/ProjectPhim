@@ -19,6 +19,7 @@ export class GheComponent implements OnInit {
     } else {
       this.status = true;
     }
+    console.log(this.status);
     this.emitStatus.emit(this.status);
   }
   ngOnInit() {
