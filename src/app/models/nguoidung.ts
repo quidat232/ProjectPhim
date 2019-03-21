@@ -1,4 +1,5 @@
 export class NguoiDung{
+  [x: string]: any;
     public TaiKhoan:string;
     public MatKhau:string;
     public HoTen:string;

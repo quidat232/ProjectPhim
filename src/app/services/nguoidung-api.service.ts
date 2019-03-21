@@ -16,11 +16,11 @@ export class NguoidungApiService {
     let obServe = this._Http.get(url).pipe(map((result:Response) => result.json()));
     return obServe;
   }
-  ThemNguoiDung(nguoiDung:NguoiDung):Observable<any> {
-    let url = `http://svcy2.myclass.vn/api/QuanLyNguoiDung/ThemNguoiDung`;
+  DangKy(nguoiDung:NguoiDung):Observable<any> {
+    let url = 'http://svcy2.myclass.vn/api/QuanLyNguoiDung/ThemNguoiDung';
     let header = new Headers();
     header.append('Content-type','application/json;charset=UTF-8');
-    let obServe = this._Http.post(url,nguoiDung,{headers:header}).pipe(map((result:Response) => result.json()));
+    let obServe = this._Http.post(url,nguoiDung.value,{headers:header}).pipe(map((result:Response) => result.json()));
     return obServe;
   }
   DangNhap(taiKhoan, matKhau) {
