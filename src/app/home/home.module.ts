@@ -26,6 +26,11 @@ import { DanhSachgheComponent } from './danh-sachghe/danh-sachghe.component';
 import { GheComponent } from './ghe/ghe.component';
 import { EditDanhsachGheComponent } from './edit-danhsach-ghe/edit-danhsach-ghe.component';
 import { LichchieuComponent } from './lichchieu/lichchieu.component';
+import { DangkiThanhcongComponent } from './dangki-thanhcong/dangki-thanhcong.component';
+import { ChitietphimComponent } from './chitietphim/chitietphim.component';
+import { PipeModule } from '../pipe/pipe.module';
+import { LoginGuard } from '../guard/login.guard';
+import { DatveComponent } from './datve/datve.component';
 
 
 
@@ -36,9 +41,10 @@ const homeRoutes :Routes= [
     {path:'', component:TrangchuComponent},
     {path:'dang-nhap', component: SigninComponent},
     {path:'dang-ky', component: SignUpComponent},
-    {path:'lich-chieu', component: LichchieuComponent,children:[
-      {path:'dat-ve', component: DanhSachgheComponent}
-    ]}
+    {path:'chi-tiet/:id/:tenphim', component:ChitietphimComponent, canActivate:[LoginGuard]},
+    {path:'SignUp-success', component: DangkiThanhcongComponent},
+    {path:'lich-chieu', component: LichchieuComponent},
+    {path:'dat-ve/:malichchieu', component: DatveComponent}
   ]},
 ]
 
@@ -67,6 +73,9 @@ const homeRoutes :Routes= [
     GheComponent,
     EditDanhsachGheComponent,
     LichchieuComponent,
+    DangkiThanhcongComponent,
+    ChitietphimComponent,
+    DatveComponent
   ],
   imports: [
     RouterModule.forRoot(homeRoutes),
@@ -74,6 +83,7 @@ const homeRoutes :Routes= [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    PipeModule
   ],
   exports: [
     // HeaderComponent,

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row m-3">
+    <div class="col-md-3">
+      <img [src]="chiTietPhim.HinhAnh" class="img-chitiet">
+    </div>
+    <div class="col-md-7 chitiet-text">
+      <div class="chitiet-phim">
+        <p>ACTION, ADVENTURE</p>
+        <h4>{{chiTietPhim.TenPhim}}</h4>
+        <p>{{chiTietPhim.MoTa}}</p>
+        <div class="viewing">
+            <i class="fa fa-clock-o"></i>
+            <span>VIEWNG TIMES</span>
+            <div class="viewing-giochieu row d-flex">
+                <div class="ngaychochieu" *ngFor="let lichchieu of getLichChieu">
+                    <button type="button" class="btn btn_movie" [routerLink]="['/dat-ve',lichchieu.MaLichChieu]">
+                      {{lichchieu.NgayChieuGioChieu | date:'dd/MM  hh:mm' }}
+                    </button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="danhgia">
+        <p>{{chiTietPhim.DanhGia}}</p>
+        <div class="danhgia_raiting text-center">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="trailer-phim">
+        <iframe width="853" height="480" [src]="chiTietPhim.Trailer | safe" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>

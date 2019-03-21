@@ -1,0 +1,70 @@
+.img-chitiet {
+    width: 100%;
+    height: 300px;
+    margin: 30px 0;
+}
+.chitiet-text {
+    margin: 30px 0;
+}
+.chitiet-phim p:first-child {
+    color: #ec7532;
+}
+.chitiet-phim h4 {
+    letter-spacing: 2px;
+    padding: 5px 0px;
+    font-weight: 600;
+}
+.chitiet-phim p:nth-child(3) {
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+.viewing i,.viewing span {
+    display: inline-block;
+    margin-right: 8px;
+}
+.btn_movie {
+    border:1px solid #000;
+    margin: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.btn_movie:hover {
+    border: 1px solid #ec7532;
+    background: #ec7532;
+    color: white;
+    transform: all .5s;
+    -webkit-transform: all .5s;
+    -moz-transform: all .5s;
+    -ms-transform: all .5s;
+    -o-transform: all .5s;
+}
+.danhgia {
+    height: 120px;
+    width: 120px;
+    line-height: 110px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 7px solid #ec7532;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+}
+.danhgia p{
+    color: #ec7532;
+    font-size: 30px;
+    text-align: center;
+}
+.danhgia_raiting i{
+    color: #ec7532;
+    margin: 0 3px;
+}
+.trailer-phim {
+    text-align: center;
+    margin: 50px 0px 20px;
+}
