@@ -1,5 +1,5 @@
 <div class="owl-carousel owl-theme">
-  <div class="item" *ngFor="let phim of DanhSachPhimDangChieu">
+  <div class="item" *ngFor="let phim of DanhSachPhimDangChieu | slice:0:6">
     <app-item-phim [itemPhim]=phim></app-item-phim>
   </div>
 </div>

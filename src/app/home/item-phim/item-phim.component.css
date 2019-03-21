@@ -110,6 +110,7 @@
     overflow: hidden;
     box-shadow: 0 5px 10px rgba(0,0, 0, 0.5);
     margin: 0 30px;
+    float: left;
 }
 .card1 .poster {
     position: relative;
@@ -141,7 +142,7 @@
     position: absolute;
     padding: 20px;
     width: 100%;
-    height: 74%;
+    height: 76%;
     bottom: -185px;
     left: 0;
     box-sizing: border-box;
@@ -156,7 +157,7 @@
     color: #fff;
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: 15px;
 }
 .details h2 span {
     font-size: 14px;

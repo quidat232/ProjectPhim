@@ -9,7 +9,7 @@
 </ul>
 </div>
 <div class="row">
-  <div class="col-12" *ngIf="dangChieuStatus;else phimSapChieu">
+  <div class="col-12 mb-3" *ngIf="dangChieuStatus;else phimSapChieu">
       <app-phim-dang-chieu></app-phim-dang-chieu>
   </div>
   <ng-template #phimSapChieu>
