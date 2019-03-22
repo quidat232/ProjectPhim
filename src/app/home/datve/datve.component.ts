@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PhimService } from 'src/app/services/phim.service';
 import { DatVe } from 'src/app/models/DatVe';
+import { Ve } from 'src/app/models/Ve';
 
 @Component({
   selector: 'app-datve',
@@ -11,10 +12,8 @@ import { DatVe } from 'src/app/models/DatVe';
 export class DatveComponent implements OnInit {
   public MaLichChieu:string;
   public DanhSachGheNgoi:any[] = [];
-  
   constructor(
-    private activatedRoute:ActivatedRoute, 
-    private phimSV:PhimService) { }
+    private activatedRoute:ActivatedRoute, private phimSV:PhimService,private router:Router) { }
   LayTaiKhoanNguoiDung() {
     let nguoiDungHienTai = JSON.parse(localStorage.getItem('nguoiDungDangNhap'));
     if(nguoiDungHienTai != null) {
@@ -53,6 +52,12 @@ export class DatveComponent implements OnInit {
         danhSachVe: danhSachGheDangDat
       }
         console.log(ve);
+        this.phimSV.postDatVe(ve).subscribe(
+          (kq:any) => {
+            console.log(kq)
+            this.router.navigate(['/lichsu-giaodich']);
+          }
+        )
     }
     
   }

@@ -12,11 +12,22 @@ export class QuanLyNguoiDungComponent implements OnInit {
 
   constructor(private _nguoidungApi:NguoidungApiService) { }
 
+  xoaNguoiDung(taiKhoan:string){
+    this._nguoidungApi.XoaNguoiDung(taiKhoan).subscribe(
+      (result: any) =>{
+        console.log(result);
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    )
+  }
+
   ngOnInit() {
     this._nguoidungApi.LayDanhSachNguoiDung().subscribe(
       (result: any) =>{
         console.log(result);
-        this.danhSachNguoiDung = result
+        this.danhSachNguoiDung = result;
       },
       (error: any) => {
         console.log(error);

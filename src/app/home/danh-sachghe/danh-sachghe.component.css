@@ -6,19 +6,17 @@
     height: 24px;
     color: #000;
 }
-.ghename {
-    padding-right: 10px;
-    color: rgb(34, 177, 58);
-    font-size: 20px;
-    font-weight: 600;
-}
-.giave {
-    color: rgb(180, 36, 36);
-    font-size: 26px;
-    font-weight: 600;
-    float: right;
-}
 
+.giaghe {
+    color: rgb(75, 172, 75);
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+.text-ghe {
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 0 15px;
+}
 .dsGheconlai p{
     letter-spacing: 3px;
     font-weight: 600;
@@ -33,4 +31,18 @@
     grid-template-rows: 50px 50px 80px 50px 50px 50px ;
     justify-content: center;    
 }
-
+.danhsach_all {
+    border: 1px solid #dee2e6;
+}
+.danhsach_all .danhsach-text{
+    margin: 20px;
+}
+.danhsach_all .gheduocdat {
+    border-bottom: 1px solid #dee2e6;
+    margin: 20px;
+}
+.btn_ghe {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 22px;
+}

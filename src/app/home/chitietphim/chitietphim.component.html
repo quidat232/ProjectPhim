@@ -14,7 +14,7 @@
             <div class="viewing-giochieu row d-flex">
                 <div class="ngaychochieu" *ngFor="let lichchieu of getLichChieu">
                     <button type="button" class="btn btn_movie" [routerLink]="['/dat-ve',lichchieu.MaLichChieu]">
-                      {{lichchieu.NgayChieuGioChieu | date:'dd/MM  hh:mm' }}
+                      {{lichchieu.NgayChieuGioChieu | date:'dd/MM - hh:mm' }}
                     </button>
                 </div>
             </div>

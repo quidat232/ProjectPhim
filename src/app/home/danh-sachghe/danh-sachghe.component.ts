@@ -13,7 +13,6 @@ import { Ve } from 'src/app/models/Ve';
 export class DanhSachgheComponent implements OnInit,OnChanges {
   @Input() arrayGhe:any[] =[];
   @Output() eventDatVe = new EventEmitter();
-  gheDaDat:Ve = new Ve();
   status:boolean =false;
   soGheDaDat:number = 0;
   soGheConLai:number = 0;
@@ -54,19 +53,13 @@ export class DanhSachgheComponent implements OnInit,OnChanges {
     
     
   }
-  datVePhim(){
+  datVePhim(ghedaDat:Ve){
     this.eventDatVe.emit(this.danhSachGheDangDat);
-    // console.log(this.danhSachGheDangDat);
-    this.phimSV.postDatVe().subscribe(
-        (kq:any) => {
-          this.danhSachGheDangDat = kq.gheDaDat;
-          console.log(this.danhSachGheDangDat)
-        }
-    )
+    console.log(this.danhSachGheDangDat);
   }
-  ThemGhe(gheduocThem) {
-    this.arrayGhe.push(gheduocThem);
-  }
+  // ThemGhe(gheduocThem) {
+  //   this.arrayGhe.push(gheduocThem);
+  // }
   ngOnChanges(change:SimpleChanges) {
     if(this.arrayGhe.length > 0) {
       // this.soGheConLai = this.arrayGhe.length;

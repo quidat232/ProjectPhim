@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-history">Lịch sử giao dịch</h2>
+      <table class="table border" >
+        <thead>
+          <th>STT</th>
+          <th>Mã ghế</th>
+          <th>Ngày Đặt</th>
+          <th>Giờ đặt</th>
+          <th>Tên phim</th>
+          <th>Rạp</th>
+          <th>Giá</th>
+        </thead>
+        <tbody >
+          <tr *ngFor='let DanhsachDatVe of DanhSachVeDaDat;let stt=index'>
+            <td>{{stt+1}}</td>
+            <td>{{DanhsachDatVe.MaGhe}}</td>
+            <td>{{DanhsachDatVe.NgayDat | date:'dd/MM/yy'}}</td>
+            <td>{{DanhsachDatVe.NgayDat | date:'hh:mm'}}</td>
+            <td>{{DanhsachDatVe.TenPhim}}</td>
+            <td>{{DanhsachDatVe.Rap}}</td>
+            <td>{{DanhsachDatVe.GiaVe}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

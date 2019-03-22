@@ -31,6 +31,7 @@ import { ChitietphimComponent } from './chitietphim/chitietphim.component';
 import { PipeModule } from '../pipe/pipe.module';
 import { LoginGuard } from '../guard/login.guard';
 import { DatveComponent } from './datve/datve.component';
+import { LichsuDatveComponent } from './lichsu-datve/lichsu-datve.component';
 
 
 
@@ -44,7 +45,8 @@ const homeRoutes :Routes= [
     {path:'chi-tiet/:id/:tenphim', component:ChitietphimComponent, canActivate:[LoginGuard]},
     {path:'SignUp-success', component: DangkiThanhcongComponent},
     {path:'lich-chieu', component: LichchieuComponent},
-    {path:'dat-ve/:malichchieu', component: DatveComponent}
+    {path:'dat-ve/:malichchieu', component: DatveComponent},
+    {path:'lichsu-giaodich', component: LichsuDatveComponent}
   ]},
 ]
 
@@ -75,7 +77,8 @@ const homeRoutes :Routes= [
     LichchieuComponent,
     DangkiThanhcongComponent,
     ChitietphimComponent,
-    DatveComponent
+    DatveComponent,
+    LichsuDatveComponent
   ],
   imports: [
     RouterModule.forRoot(homeRoutes),
