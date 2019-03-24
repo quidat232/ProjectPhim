@@ -26,7 +26,7 @@ export class ChitietphimComponent implements OnInit {
         this.PhimSv.getChiTietPhim(this.MaPhim).subscribe(
           (kq:any) => {
             this.chiTietPhim = kq;
-            // console.log(this.chiTietPhim);
+            console.log(this.chiTietPhim);
             let arrLichChieu = this.chiTietPhim.LichChieu;
             // console.log(arrLichChieu);
             this.getLichChieu = arrLichChieu;

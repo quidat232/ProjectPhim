@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row border view_all">
+        <div class="col-md-4">
+            <img [src]="itemLichChieu.HinhAnh" class="imgLC">
+        </div>
+        <div class="col-md-8">
+            <div class="view_text">
+                <h2>{{itemLichChieu.TenPhim}}</h2>
+                <p>{{itemLichChieu.MoTa}}</p>
+            </div>
+            <div class="viewing">
+                <i class="fa fa-clock-o"></i>
+                <span>NGÀY KHỞI CHIẾU</span>
+                <div class="viewing-giochieu row d-flex">
+                    <button type="button" class="btn btn_movie" [routerLink]="['/chi-tiet',itemLichChieu.MaPhim,itemLichChieu.TenPhim]">
+                         {{itemLichChieu.NgayKhoiChieu | date:'dd/MM/yy'}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

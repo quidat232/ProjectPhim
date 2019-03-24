@@ -32,6 +32,7 @@ import { PipeModule } from '../pipe/pipe.module';
 import { LoginGuard } from '../guard/login.guard';
 import { DatveComponent } from './datve/datve.component';
 import { LichsuDatveComponent } from './lichsu-datve/lichsu-datve.component';
+import { ItemLichchieuComponent } from './item-lichchieu/item-lichchieu.component';
 
 
 
@@ -46,7 +47,7 @@ const homeRoutes :Routes= [
     {path:'SignUp-success', component: DangkiThanhcongComponent},
     {path:'lich-chieu', component: LichchieuComponent},
     {path:'dat-ve/:malichchieu', component: DatveComponent},
-    {path:'lichsu-giaodich', component: LichsuDatveComponent}
+    {path:'lichsu-giaodich', component: LichsuDatveComponent},
   ]},
 ]
 
@@ -78,7 +79,8 @@ const homeRoutes :Routes= [
     DangkiThanhcongComponent,
     ChitietphimComponent,
     DatveComponent,
-    LichsuDatveComponent
+    LichsuDatveComponent,
+    ItemLichchieuComponent
   ],
   imports: [
     RouterModule.forRoot(homeRoutes),

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Phim } from 'src/app/models/phim';
+import { PhimService } from 'src/app/services/phim.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-lichchieu',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lichchieu.component.css']
 })
 export class LichchieuComponent implements OnInit {
-
-  constructor() { }
+  lichChieu:Phim[]= [];
+  getLichChieu:any = [];
+  public MaPhim:number[];
+  constructor(private phimSV:PhimService,private activated:ActivatedRoute) { }
 
   ngOnInit() {
+    this.phimSV.getDanhSachPhim().subscribe(
+      (kq:any) => {
+        this.lichChieu = kq;
+        console.log(this.lichChieu);
+      }
+    )
+   
   }
 
 }
