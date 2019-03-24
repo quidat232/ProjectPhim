@@ -11,5 +11,4 @@ export class QuanLyLichChieuComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

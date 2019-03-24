@@ -13,7 +13,7 @@ export class NguoidungApiService {
   constructor(private _Http:Http, private _HttpClient: HttpClient) { }
 
   LayDanhSachNguoiDung():Observable<any> {
-    let url = `http://svcy2.myclass.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP05`
+    let url = `http://svcy2.myclass.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP03`
     let obServe = this._HttpClient.get( url )
     return obServe;
   }
@@ -24,7 +24,7 @@ export class NguoidungApiService {
     let obServe = this._Http.post(url,nguoiDung,{headers:header}).pipe(map((result:Response) => result.json()));
     return obServe;
   }
-  DangNhap(taiKhoan, matKhau) {
+  DangNhap(taiKhoan:string, matKhau:string) {
     let apiDangNhap = `http://svcy2.myclass.vn/api/QuanLyNguoiDung/DangNhap?taikhoan=${taiKhoan}&matkhau=${matKhau}`;
     let header = new Headers();
     header.append('Content-type','application/json;charset=UTF-8');
@@ -45,4 +45,6 @@ export class NguoidungApiService {
     let obServe = this._HttpClient.delete(apiXoa)
     return obServe
   }
+
+  
 }

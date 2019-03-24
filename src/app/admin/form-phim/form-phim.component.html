@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5 mx-auto">
+      <form #formP="ngForm" (ngSubmit)="signUpPhim( formPhim )">
+        <div *ngIf="statusThePhim; else theCapNhatPhim">
+          <h4 #thePhim class="display-4">Thêm phim</h4>
+        </div>
+        <ng-template #theCapNhatPhim>
+          <h4 #thePhim class="display-4">Cập nhật phim</h4>
+        </ng-template>
+        <div class="form-group">
+          <label for="">Mã phim: </label>
+          <input type="text" required #mp="ngModel" class="form-control" name="MaPhim" ngModel>
+          <!-- Thông báo lỗi -->
+          <div *ngIf="mp.errors && (mp.touched || mp.dirty || formPhim.submitted)">
+            <div *ngIf="mp.errors.required" class="alert alert-danger">
+              * Vui lòng nhập mã phim
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Tên Phim: </label>
+          <input type="text" required #tp="ngModel" class="form-control" name="TenPhim" ngModel>
+          <!-- Thông báo lỗi tên phim -->
+          <div *ngIf=" tp.errors && (tp.touched || tp.dirty || formPhim.submitted ) ">
+            <div *ngIf="tp.errors.required" class="alert alert-danger">
+              * Vui lòng nhập tên phim
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Trailer: </label>
+          <input type="text" required #tr="ngModel" class="form-control" name="Trailer" ngModel>
+          <!-- Thông báo lỗi trailer -->
+          <div *ngIf=" tr.errors && (tr.touched || tr.dirty || formPhim.submitted ) ">
+            <div *ngIf="tr.errors.required" class="alert alert-danger">
+              * Vui lòng nhập trailer
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Mô tả: </label>
+          <input type="text" required #mt="ngModel" class="form-control" name="MoTa" ngModel [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+            "ẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
+            "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"'>
+          <!-- Thông báo lỗi họ tên -->
+          <div *ngIf="mt.errors && (mt.touched || mt.dirty || formPhim.submitted )">
+            <div *ngIf="mt.errors.pattern" class="alert alert-danger">
+              * Mô tả phải là ngôn ngữ thông thường
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="">Ngày khởi chiếu: </label>
+          <input type="date" #ngay="ngModel" class="form-control" name="NgayKhoiChieu" ngModel>
+          <div *ngIf="ngay.errors && (ngay.touched || ngay.dirty || formPhim.submitted )">
+            <div *ngIf="ngay.errors" class="alert alert-danger">
+              * Ngày không đúng định dạng
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="">Đánh giá: </label>
+          <input type="number" class="form-control" #dg="ngModel" name="DanhGia" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="">Hình ảnh: </label>
+          <input type="text" #ha="ngModel" class="form-control" name="HinhAnh" ngModel>
+        </div>
+
+        <div class="form-group">
+          <button [disabled]="formDK.invalid" class="btn btn-success" type="submit">Lưu lại</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

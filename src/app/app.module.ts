@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
-import {RouterModule, Routes} from '@angular/router'
-
+import { RouterModule, Routes} from '@angular/router'
 import { HttpClientModule } from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { PipeModule } from './pipe/pipe.module';
 
 const appRoutes:Routes = [
   {path:'', loadChildren:() => HomeModule},
@@ -19,6 +20,7 @@ const appRoutes:Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    
 
   ],
   imports: [
@@ -28,8 +30,9 @@ const appRoutes:Routes = [
     HomeModule,
     AdminModule,
     HttpModule,
-    HttpClientModule
-
+    HttpClientModule,
+    NgxPaginationModule,
+    PipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

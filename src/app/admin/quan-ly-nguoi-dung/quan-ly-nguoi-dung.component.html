@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <br />
   <div class="input-group md-form form-sm form-2 pl-0">
-      <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
+      <input class="form-control my-0 py-1" type="text" #searchField placeholder="Search" aria-label="Search" (keyup)="TimNguoiDung(searchField.value)">
       <div class="input-group-append">
         <span class="input-group-text lighten-2" id="basic-text1"><i class="fa fa-search text-grey" aria-hidden="true"></i></span>
       </div>
@@ -20,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let nguoidung of danhSachNguoiDung'>
+      <tr *ngFor='let nguoidung of danhSachTimKiem | paginate: { itemsPerPage: 10, currentPage: p }'>
         <td>{{nguoidung.TaiKhoan}}</td>
         <td>{{nguoidung.MatKhau}}</td>
         <td>{{nguoidung.HoTen}}</td>
@@ -28,11 +28,15 @@
         <td>{{nguoidung.SoDT}}</td>
         <td>{{nguoidung.MaLoaiNguoiDung }}</td>
         <td>
-          <button class="btn btn-info mr-1" (click)="xoaNguoiDung(nguoidung.TaiKhoan)">Chi tiết</button>
-          <button class="btn btn-success mr-1" (click)="xoaNguoiDung(nguoidung.TaiKhoan)">Sửa</button>
-          <button class="btn btn-danger" (click)="xoaNguoiDung(nguoidung.TaiKhoan)">Xóa</button>
+          <button class="btn btn-info mr-1" ><i class="fa fa-address-book"></i></button>
+          <button class="btn btn-success mr-1"
+          [routerLink]="['/admin/dk-nguoi-dung']"
+          [queryParams]="{status:statusND}"
+          (click)="suaNguoiDung(nguoidung)"><i class="fa fa-pencil"></i></button>
+          <button class="btn btn-danger" (click)="xoaNguoiDung(nguoidung.TaiKhoan)"><i class="fa fa-trash"></i></button>
         </td>
       </tr>
     </tbody>
   </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

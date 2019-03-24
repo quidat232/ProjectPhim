@@ -1,3 +1,46 @@
-<p>
-  quan-ly-phim works!
-</p>
+<div class="container-fluid">
+  <br />
+  <div class="input-group md-form form-sm form-2 pl-0">
+      <input class="form-control my-0 py-1" type="text" #searchFilmField placeholder="Search" aria-label="Search" (keyup)="TimPhim(searchFilmField.value)">
+      <div class="input-group-append">
+        <span class="input-group-text lighten-2" id="basic-text1"><i class="fa fa-search text-grey" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  <br />
+  <table class=" table">
+    <thead class="text-center">
+      <tr>
+        <th>Mã phim</th>
+        <th>Tên phim</th>
+        <th>Trailer</th>
+        <th>Mô tả</th>
+        <th>Ngáy khởi chiếu</th>
+        <th>Đánh giá</th>
+        <th>Hình ảnh</th>
+        <th>Chức năng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let phim of danhSachPhimTimKiem | paginate: { itemsPerPage: 10, currentPage: p }'>
+        <td>{{phim.MaPhim}}</td>
+        <td>{{phim.TenPhim}}</td>
+        <td>{{phim.Trailer}}</td>
+        <td>{{phim.MoTa }}</td>
+        <td>{{phim.NgayKhoiChieu | date: "dd-MM-yyyy hh:mm"}}</td>
+        <td>{{phim.DanhGia}}</td>
+        <td>
+          <img src={{phim.HinhAnh}} height="150" width="150">
+        </td>
+        <td>
+          <button class="btn btn-info mr-1" ><i class="fa fa-address-book"></i></button>
+          <button class="btn btn-success mr-1"
+          [routerLink]="['/admin/dk-phim']"
+          [queryParams]="{status:statusP}"
+          (click)="suaPhim(phim)"><i class="fa fa-pencil"></i></button>
+          <button class="btn btn-danger" (click)="xoaPhim(phim.MaPhim)"><i class="fa fa-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
