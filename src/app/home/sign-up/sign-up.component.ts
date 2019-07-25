@@ -10,40 +10,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-  @ViewChild('formDangKy') formDK:NgForm;
-  
-  mangNguoiDungDangKy:NguoiDung[] = [];
+  @ViewChild('formDangKy') formDK: NgForm;
+  mangNguoiDungDangKy: NguoiDung[] = [];
 
 
-  DangKy(nguoiDung:NguoiDung){
-    nguoiDung.value.MaNhom = "GP03";
+  DangKy(nguoiDung: NguoiDung) {
+    nguoiDung.value.MaNhom = 'GP03';
     this._nguoiDungSV.DangKy(nguoiDung).subscribe(
-      (kq:any) => {
+      (kq: any) => {
         console.log(kq);
         this._router.navigate(['/SignUp-success']);
       },
-      (error:any) =>{
+      (error: any) =>{
         console.log(error);
       }
-    )
-    //lúc đăng ký xong reset lại form
+    );
+    // lúc đăng ký xong reset lại form
     this.formDK.reset();
   }
 
 
-  constructor(private _nguoiDungSV: NguoidungApiService, private _router:Router) { }
-
-
-
+  constructor(private _nguoiDungSV: NguoidungApiService, private _router: Router) { }
   ngOnInit() {
     this._nguoiDungSV.LayDanhSachNguoiDung().subscribe(
-      (kq:any) => {
+      (kq: any) => {
         console.log(kq);
-        this.mangNguoiDungDangKy = kq; 
-      }, (err:any) => {
+        this.mangNguoiDungDangKy = kq;
+      }, (err: any) => {
         console.log(err);
       }
-    )
+    );
   }
 
 }

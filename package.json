@@ -25,9 +25,11 @@
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
+    "ngx-pagination": "^4.1.0",
     "owl.carousel": "^2.3.4",
     "popper.js": "^1.14.7",
     "rxjs": "~6.3.3",
+    "sweetalert2": "^8.6.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },

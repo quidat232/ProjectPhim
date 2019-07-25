@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
+
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SliderComponent } from './slider/slider.component';
@@ -19,7 +21,7 @@ import { ThongTinLienHeComponent } from './thong-tin-lien-he/thong-tin-lien-he.c
 import { TrangchuComponent } from './trangchu/trangchu.component';
 import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
 import { LayoutHomeComponent } from './layout-home/layout-home.component';
-import {RouterModule,Routes} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import { SigninComponent } from './signin/signin.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { DanhSachgheComponent } from './danh-sachghe/danh-sachghe.component';
@@ -33,23 +35,29 @@ import { LoginGuard } from '../guard/login.guard';
 import { DatveComponent } from './datve/datve.component';
 import { LichsuDatveComponent } from './lichsu-datve/lichsu-datve.component';
 import { ItemLichchieuComponent } from './item-lichchieu/item-lichchieu.component';
+import { Swal } from 'sweetalert2/dist/sweetalert2';
+import { DatveThanhcongComponent } from './datve-thanhcong/datve-thanhcong.component';
+import { NotFoundComponent } from '../not-found/not-found.component';
 
 
 
 
-const homeRoutes :Routes= [
-  {path:'', component:LayoutHomeComponent, children: [
-    {path:'trang-chu', component:TrangchuComponent},
-    {path:'', component:TrangchuComponent},
-    {path:'dang-nhap', component: SigninComponent},
-    {path:'dang-ky', component: SignUpComponent},
-    {path:'chi-tiet/:id/:tenphim', component:ChitietphimComponent, canActivate:[LoginGuard]},
-    {path:'SignUp-success', component: DangkiThanhcongComponent},
-    {path:'lich-chieu', component: LichchieuComponent},
-    {path:'dat-ve/:malichchieu', component: DatveComponent},
-    {path:'lichsu-giaodich', component: LichsuDatveComponent},
+const homeRoutes: Routes = [
+  {path: '', component: LayoutHomeComponent, children: [
+    {path: 'trang-chu', component: TrangchuComponent},
+    {path: '', component: TrangchuComponent},
+    {path: 'dang-nhap', component: SigninComponent},
+    {path: 'dang-ky', component: SignUpComponent},
+    {path: 'chi-tiet/:id/:tenphim', component: ChitietphimComponent, canActivate:[LoginGuard]},
+    {path: 'SignUp-success', component: DangkiThanhcongComponent},
+    {path: 'lich-chieu', component: LichchieuComponent},
+    {path: 'dat-ve/:malichchieu', component: DatveComponent},
+    {path: 'lichsu-giaodich', component: LichsuDatveComponent},
+    {path: 'datve-thanhcong', component: DatveThanhcongComponent},
+    {path: '**', redirectTo: '404'}
   ]},
-]
+  {path: '404', component: NotFoundComponent}
+];
 
 @NgModule({
   declarations: [
@@ -80,33 +88,20 @@ const homeRoutes :Routes= [
     ChitietphimComponent,
     DatveComponent,
     LichsuDatveComponent,
-    ItemLichchieuComponent
+    ItemLichchieuComponent,
+    DatveThanhcongComponent
   ],
   imports: [
-    RouterModule.forRoot(homeRoutes),
+    RouterModule.forChild(homeRoutes),
     BrowserModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    PipeModule
+    PipeModule,
+    HttpModule
   ],
   exports: [
-    // HeaderComponent,
-    // FooterComponent,
-    // SliderComponent,
-    // LoaiphimComponent,
-    // PhimDangChieuComponent,
-    // PhimSapChieuComponent,
-    // ItemPhimComponent,
-    // TintucComponent,
-    // DienAnhComponent,
-    // ReViewComponent,
-    // KhuyenMaiComponent,
-    // LienheComponent,
-    // FormlienheComponent,
-    // ThongTinLienHeComponent,
     TrangchuComponent,
-    // ItemTinTucComponent,
     SigninComponent,
     LayoutHomeComponent,
     SignUpComponent,

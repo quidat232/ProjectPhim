@@ -1,0 +1,21 @@
+.top_phim {
+    margin:  55px 20px;
+}
+.top_phim .title {
+    color: #F26C4F;
+    font-size: 25px;
+}
+.top_phim td {
+    font-size: 19px;
+    font-weight: normal;
+    color: #202938;
+}
+.top_phim td.one {
+    color:red;
+}
+.top_phim td.two {
+    color:mediumvioletred;
+}
+.top_phim td.three {
+    color:royalblue;
+}

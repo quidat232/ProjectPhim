@@ -8,6 +8,6 @@ import { SafePipe } from './safe.pipe';
   imports: [
     CommonModule
   ],
-  exports:[ShortcutPipe, SafePipe]
+  exports: [ShortcutPipe, SafePipe]
 })
 export class PipeModule { }

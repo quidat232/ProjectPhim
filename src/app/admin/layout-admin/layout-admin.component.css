@@ -1,0 +1,9 @@
+.main_container {
+    background: #e6e6e6;
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+}
+.main_container .main {
+    flex-grow: 1;
+    overflow: hidden;
+}

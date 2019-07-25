@@ -1,3 +1,7 @@
-<app-admin-header></app-admin-header>
-<router-outlet></router-outlet>
-<app-admin-footer></app-admin-footer>
+<section class="main_container">
+    <app-sidebar [sidebarStatus]="sidebarStatus"></app-sidebar>
+    <div class="main">
+        <app-top-nav (toggleSidebar)="handleSidebar($event)"></app-top-nav>
+        <router-outlet></router-outlet>
+    </div>
+</section>

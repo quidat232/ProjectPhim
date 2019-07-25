@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from 'src/app/guard/auth.service';
 import { NguoiDung } from 'src/app/models/nguoidung';
 import { Router } from '@angular/router';
+import { PhimService } from 'src/app/services/phim.service';
+import { Phim } from 'src/app/models/phim';
+import { ChitietphimComponent } from '../chitietphim/chitietphim.component';
+import {$} from 'jquery';
+declare let $: any;
 
 @Component({
   selector: 'app-header',
@@ -9,33 +14,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private _auth:AuthService,private _router:Router) { }
-  isLogin:boolean = false;
- nguoiDungDangNhap: NguoiDung;
+  constructor(private _auth: AuthService, private _router: Router, private phimSV: PhimService) { }
+  isLogin = false;
+  nguoiDungDangNhap = JSON.parse(localStorage.getItem('nguoiDungDangNhap'));
+  checkLoging() {
+    if (this.nguoiDungDangNhap != null) {
+       this.isLogin = true;
+    }
+  }
   ngOnInit() {
   this._auth.login.subscribe(
-    (res:any) => {
+    (res: any) => {
       this.isLogin = res;
-      console.log(localStorage.getItem('nguoiDungDangNhap'));
-      if(this.isLogin === true) {
-        this.nguoiDungDangNhap = JSON.parse(localStorage.getItem('nguoiDungDangNhap'));
-      }
       console.log(this.nguoiDungDangNhap);
-      // console.log(res);
-      // console.log(this.isLogin);
-      // console.log(123)
+      if (this.isLogin === true) {
+        this.nguoiDungDangNhap = JSON.parse(localStorage.getItem('nguoiDungDangNhap'));
+        console.log(this.nguoiDungDangNhap);
+      }
+      this.checkLoging();
     },
-    (err:any) => {
+    (err: any) => {
       console.log(err);
-    }  
-      
+    }
     );
+}
 
-  }
   DangXuat() {
     localStorage.removeItem('nguoiDungDangNhap');
     this._auth.checkLogin();
     this._router.navigate(['/']);
   }
+
 }

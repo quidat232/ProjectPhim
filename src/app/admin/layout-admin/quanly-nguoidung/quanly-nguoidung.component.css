@@ -1,0 +1,9 @@
+.content_box .title button {
+    float: right;
+}
+.content_box .content .data_table .pagination_cus .ngx-pagination {
+    padding: 0;
+}
+.content_box .content .data_table .pagination_cus  .ngx-pagination .current{
+    background: #F26C4F;
+}

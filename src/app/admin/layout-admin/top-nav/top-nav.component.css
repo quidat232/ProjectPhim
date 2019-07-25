@@ -1,0 +1,96 @@
+.top_nav {
+    height: 60px;
+    background: white;
+    box-shadow: 6px -5px 12px 0px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.top_nav .toggle_sidebar {
+    line-height: 60px;
+    color: #F26C4F;
+    font-size: 21px;
+    font-weight: normal;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.top_nav .toggle_sidebar:hover {
+    color: #4d4d4d;
+}
+.top_nav .admin_info {
+    height: 100%;
+    margin: 0 40px;
+    display: flex;
+    cursor: pointer;
+}
+.top_nav .admin_info i {
+    color: #4d4d4d;
+    font-weight: normal;
+    font-size: 25px;
+    align-self: center;
+}
+.top_nav .admin_info .name_admin {
+    display: inline-block;
+    align-self: center;
+    padding:  0 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #4d4d4d;
+}
+.top_nav .admin_info .name_admin i {
+    font-size: 13px;
+}
+.top_nav .admin_info:hover .name_admin {
+    color: #F26C4F;
+}
+.top_nav .user_option {
+    position: absolute;
+    background: white;
+    right: 40px;
+    top: 101%;
+    margin-bottom: 0;
+    padding: 0;
+    box-shadow: 1px 2px 7px 0px;
+    overflow: hidden;
+    height: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}   
+.top_nav .user_option.active {
+    height: 89.6px;
+}
+.top_nav .user_option .option_item {
+    list-style-type: none;
+}
+.top_nav .user_option .option_item .item_link {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: normal;
+    color: #4d4d4d;
+}
+.top_nav .user_option .option_item .item_link span {
+    margin-right: 5px;
+    font-size: 17px;
+}
+.top_nav .user_option .option_item .item_link:hover {
+    background: rgba(#e6e6e6, 0.5);
+}
+.demo {
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+}

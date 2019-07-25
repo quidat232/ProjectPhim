@@ -26,3 +26,117 @@ body {
 .clear {
     clear: both;
 }
+.content_box {
+    padding:28px 30px;
+    width: auto;
+}
+.content_box .title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #4d4d4d;
+}
+.content {
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 0px 20px 0px rgba(#4d4d4d, 0.2);
+    overflow-x: scroll;
+}
+.search {
+    height: 50px;
+    width: 400px;
+    display: flex;
+    padding-right: 10px;
+}
+.search span {
+    line-height: 50px;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: normal;
+    color: #737373;
+}
+.search .search_bar {
+    height: 35px;
+    flex-grow: 1;
+    align-self: center;
+    padding: 0 7px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #202938;
+    border: 1px solid #737373;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.search .search_bar:focus {
+    border: 1px solid #F26C4F;
+    outline: none;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+.data_table {
+    margin: 15px 0;
+    white-space: nowrap;
+}
+.data_table td {
+    vertical-align: middle;
+}
+.data_table  th {
+    padding: 10px;
+}
+/* MODAL */
+.modal-content .modal-title {
+    color: #F26C4F;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.modal-content .modal-body {
+    padding: 16px 16px 0 16px;
+}
+.modal-content .modal-body p {
+    margin-bottom: 30px;
+    padding:  0 10px;
+}
+.modal-content .modal-body p span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4d4d4d;
+    margin-right: 8px;
+}
+.modal-content .modal-body label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4d4d4d;
+}
+.modal-content .modal-body .error {
+    margin-top: 5px;
+}
+.modal-content .modal-body .error span {
+    font-size: 15px;
+    font-weight: normal;
+    color: red;
+    padding-left: 1px;
+}
+
+@media screen and (max-width:768px) {
+    .content_box {
+        padding: 28px 5px;
+    }
+    .content_box .content {
+        padding: 10px;
+    }
+}
+@media screen and (max-width:576px) {
+    .content_box .content {
+        padding: 5px 3px;
+    }
+    .content_box .content .search {
+        padding-left: 10px;
+        width: 370px;
+    }
+}

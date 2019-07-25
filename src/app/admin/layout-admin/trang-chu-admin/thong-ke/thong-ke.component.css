@@ -1,0 +1,57 @@
+.thong_ke {
+    display: flex;
+    justify-content: space-between;
+}
+.thong_ke .item {
+    height: 140px;
+    margin:  0 13px;
+    width: 100%;
+    background: blue;
+    display: flex;
+    justify-items: center;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.thong_ke .item.users {
+    background:#FF675F;
+}
+.thong_ke .item.movies {
+    background: #00BDBD;
+}
+.thong_ke .item.tickets {
+    background: #F9BC2D;
+}
+.thong_ke .item .icon {
+    align-self: center;
+    font-size: 60px;
+    color: rgba(white, 0.9);
+    margin: 0 20px 0 30px;
+}
+.thong_ke .item .number {
+    flex-grow: 1;
+    align-content: center;
+    text-align: right;
+    margin-right: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+}
+.thong_ke .item .number span {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    color: white;
+}
+
+@media screen and (max-width: 1168px) {
+    .thong_ke {
+        flex-wrap: wrap;
+    }
+    .thong_ke .item {
+        margin: 10px 13px;
+    }
+
+}

@@ -4,6 +4,7 @@ import { DatVe } from 'src/app/models/DatVe';
 import { EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Ve } from 'src/app/models/Ve';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-danh-sachghe',
@@ -11,14 +12,14 @@ import { Ve } from 'src/app/models/Ve';
   styleUrls: ['./danh-sachghe.component.css']
 })
 export class DanhSachgheComponent implements OnInit,OnChanges {
-  @Input() arrayGhe:any[] =[];
+  @Input() arrayGhe: any[] =[];
   @Output() eventDatVe = new EventEmitter();
-  status:boolean =false;
-  soGheDaDat:number = 0;
-  soGheConLai:number = 0;
+  status = false;
+  soGheDaDat = 0;
+  soGheConLai = 0;
   danhSachGheDangDat = [];
-  public MaLichChieu:string;
-  constructor(private phimSV:PhimService, private router:Router) { }
+  public MaLichChieu: string;
+  constructor(private phimSV: PhimService, private router: Router) { }
 
   ngOnInit() {
     // for(let ghedaDat of this.arrayGhe) {
@@ -30,12 +31,12 @@ export class DanhSachgheComponent implements OnInit,OnChanges {
     // }
   }
   DatGheParent(status,ghe) {
-    let ve:{MaGhe:string,TenGhe:string,GiaVe:number} = {
-      MaGhe:ghe.MaGhe,
-      TenGhe:ghe.TenGhe,
-      GiaVe:ghe.GiaVe
-    }
-    if(status) {
+    let ve: {MaGhe:string,TenGhe:string,GiaVe:number } = {
+      MaGhe: ghe.MaGhe,
+      TenGhe: ghe.TenGhe,
+      GiaVe: ghe.GiaVe
+    };
+    if (status) {
       this.soGheDaDat++;
       this.soGheConLai--;
       this.danhSachGheDangDat.push(ve);
@@ -43,17 +44,16 @@ export class DanhSachgheComponent implements OnInit,OnChanges {
       this.soGheDaDat--;
       this.soGheConLai++;
       for(let index in this.danhSachGheDangDat) {
-        //tìm ghế đang được huỷ
-        if(this.danhSachGheDangDat[index].MaGhe === ghe.MaGhe) {
-          this.danhSachGheDangDat.splice(parseInt(index),1);
+        // tìm ghế đang được huỷ
+        if (this.danhSachGheDangDat[index].MaGhe === ghe.MaGhe) {
+          // tslint:disable-next-line:radix
+          this.danhSachGheDangDat.splice(parseInt(index), 1);
         }
       }
     }
     console.log(ve);
-    
-    
   }
-  datVePhim(ghedaDat:Ve){
+  datVePhim(ghedaDat: Ve) {
     this.eventDatVe.emit(this.danhSachGheDangDat);
     console.log(this.danhSachGheDangDat);
   }
@@ -62,12 +62,13 @@ export class DanhSachgheComponent implements OnInit,OnChanges {
   // }
   ngOnChanges(change:SimpleChanges) {
     if(this.arrayGhe.length > 0) {
-      // this.soGheConLai = this.arrayGhe.length;
+      this.soGheConLai = this.arrayGhe.length;
       for(let ghe of this.arrayGhe) {
-        if(!ghe.DaDat) {       
-          this.soGheConLai++;
+        if(ghe.DaDat) {       
+          this.soGheConLai--;
         }
       }
+      console.log(this.soGheConLai);
     }
   }
 }

@@ -1,0 +1,72 @@
+.login_page {
+    min-height: 100vh;
+    background: #e6e6e6;
+    padding:10% 0;
+}
+.login_page .login {
+    width: 400px;
+    background:white;
+    margin:auto;
+    padding:20px 0;
+}
+.login_page .login .title {
+    padding: 0 10px;
+    text-transform: uppercase;
+    line-height: 58px;
+    border: solid #F44336;
+    border-width: 0 0 0 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #4d4d4d;
+    margin-bottom: 10px;
+}
+.login_page .login .form .field {
+    background: rgba(#e6e6e6,0.5);
+    border-bottom: 1px solid #a6a6a6;
+    height: 50px;
+    margin:20px 20px 0 20px;
+    display: flex;
+}
+.login_page .login .form .field .input {
+    flex-grow: 2;
+    height:100%;
+    padding:0 10px;
+    background: none;
+    border: none;
+    font-size: 25px;
+    font-weight: 600;
+    color: #4d4d4d;
+}
+.login_page .login .form .field .input:focus {
+    outline: none;
+}
+.login_page .login .form .field span {
+    display: inline-block;
+    line-height:50px;
+    text-align: center;
+    width: 50px;
+    font-size: 25px;
+    font-weight: normal;
+    color: #e6e6e6;
+}
+.login_page .login .form .btn_box {
+    margin:20px 20px 0 20px;
+}
+.login_page .login .form .btn_box .button {
+    text-transform: uppercase;
+    border:none;
+    height:60px;
+    width: 100%;
+    background:#a6a6a6;
+    font-size: 20px;
+    font-weight: bold;
+    color: #e6e6e6;  
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+.login_page .login .form .btn_box .button:hover {
+    color: #4d4d4d;
+}
